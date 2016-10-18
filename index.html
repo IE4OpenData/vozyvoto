@@ -29,8 +29,8 @@
       <div id="main" role="main">
         <div class="download-bar">
         <div class="inner">
-          <a href="https://github.com/IE4OpenData/vozyvoto/tarball/master" class="download-button tar"><span>Download</span></a>
-          <a href="https://github.com/IE4OpenData/vozyvoto/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="http://duboue.net/download/vozyvoto2016ds.tar.bz2" class="download-button tar"><span>Download Data</span></a>
+          <a href="http://duboue.net/download/vozyvoto2016ds.zip" class="download-button zip"><span>Download Data</span></a>
           <a href="https://github.com/IE4OpenData/vozyvoto" class="code">View Vozyvoto on GitHub</a>
         </div>
         <span class="blc"></span><span class="trc"></span>
@@ -50,7 +50,48 @@ proceedings of government assemblies.</p>
 Cordoba, Argentina in September 2016</a>. It analyzes the participation of
 female representatives in the congress floor, a topic of interest for
 <a href="http://www.fundeps.org/">FUNDEPS</a> which (among many other things) studies the impact of
-mandatory gender quotas in the Argentinian ballot.</p>
+              mandatory gender quotas in the Argentinian ballot.</p>
+
+            <img src="images/graph.png">
+
+<p>The current system was built during the hackathon using a
+combination of <a href="https://www.gnu.org/software/bash/">shell
+scripts</a>, <a href="http://pandoc.org">pandoc</a>, <a
+href="https://www.gnu.org/software/libiconv/">iconv</a>, <a
+href="http://perl.org">perl</a> and <a
+href="http://opennlp.apache.org">OpenNLP</a>. The gender
+identification component is based on the Spanish Wikipedia lists of
+<a href="https://es.wikipedia.org/w/index.php?title=Categor%C3%ADa:Nombres_masculinos">unambiguous male</a> and <a href="https://es.wikipedia.org/w/index.php?title=Categor%C3%ADa:Nombres_femeninos">female names</a> (and it is available as <a href="https://github.com/IE4OpenData/generalizador">a separate
+project</a>). The entity linking (person disambiguation) component is the
+most rudimentary piece and uses a heuristic point system for
+attributing a phrase identified as a person mention by OpenNLP to one
+of the representatives present.</p>
+
+<p>              
+The total amount of text processed is as follows:
+</p>
+              
+<ul>                
+<li> Raw data (including formatting): 161Mb</li>
+<li> Text data: 107Mb </li>
+<li> Words: 2M </li>
+<li> Sessions: 425 usable, 475 total </li>
+<li> Years: 2001-2016 </li>
+<li> Total people to link: 887 </li>
+</ul>
+
+<p>This data is available for download: <a href="http://duboue.net/download/vozyvoto2016ds.zip">http://duboue.net/download/vozyvoto2016ds.zip</a></p>
+
+<h3>
+<a id="team" class="anchor" href="#team" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Team</h3>
+
+<ul>
+<li> <a href="http://annieying.ca">Annie Ying</a></li>
+<li> Mauricio Koraj </li>
+<li> <a href="http://duboue.net">Pablo Duboue</a></li>
+</ul>
+              
+
         </article>
       </div>
     </div>
@@ -67,7 +108,6 @@ mandatory gender quotas in the Argentinian ballot.</p>
   </div>
   <div class="current-section">
     <a href="#top">Scroll to top</a>
-    <a href="https://github.com/IE4OpenData/vozyvoto/tarball/master" class="tar">tar</a><a href="https://github.com/IE4OpenData/vozyvoto/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
     <p class="name"></p>
   </div>
 
