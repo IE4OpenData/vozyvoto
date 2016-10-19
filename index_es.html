@@ -1,0 +1,139 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" href="stylesheets/github-dark.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Vozyvoto</title>
+  <meta name="description" content="Vozyvoto (voice and vote) is a study of subgroup participation in government assemblies.">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Vozyvoto</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">Vozyvoto es un estudio de la participación de subgrupos en asambleas gubernamentales.</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="http://duboue.net/download/vozyvoto2016ds.tar.bz2" class="download-button tar"><span>Descargar Datos</span></a>
+          <a href="http://duboue.net/download/vozyvoto2016ds.zip" class="download-button zip"><span>Descargar Datos</span></a>
+          <a href="index.html" class="code">In English</a>
+          <a href="https://github.com/IE4OpenData/vozyvoto" class="code">Ver Vozyvoto en GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h1>
+<a id="vozyvoto" class="anchor" href="#vozyvoto" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Vozyvoto</h1>
+
+<p>Vozyvoto es un estudio de la participación (tanto en términos de hablar como de ser mencionado) de subgrupos en asambleas gubernamentales. Es extracción de información dentro del proyecto <a
+href="http://ie4opendata.org/index_es.html">IE4OpenData</a>.</p>
+
+<h2>
+<a id="current-demo" class="anchor" href="#current-demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo actual</h2>
+
+<p>La demo actual fue concebida durante la <a href="http://opendatacordoba.org/HackatONG/2016/">3ra Hack(at)ONG en
+Cordoba, Argentina en septiembre del 2016</a>. Analiza la participación de las diputadas en las sesiones del congreso,
+un tema de interés para <a href="http://www.fundeps.org/">FUNDEPS</a> una fundación que (entre muchos otros temas)
+estudia el impacto de las leyes de cuotas por género en los comicios argentinos.</p>
+
+            <img src="images/graph.png">
+
+
+<p>Implica (vea <a
+href="https://github.com/IE4OpenData/vozyvoto/blob/master/Hackatong2016.md">Hackatong2016.md</a>
+para más detalles):</p>
+
+<ul>              
+<li>Bajado de sesiones taquigraficas.</li>
+<li>Bajado de asistencias.</li>
+<li>Asignación de género en los listados de asistencia.</li>
+<li>Identificación de personas en las transcripciones.</li>
+<li>Conteo de personas mencionadas por género.</li>
+</ul>                
+                
+<p>El sistema creado durante la hackathon utiliza una combinación de
+<a href="https://www.gnu.org/software/bash/">shell scripts</a>, <a
+href="http://pandoc.org">pandoc</a>, <a
+href="https://www.gnu.org/software/libiconv/">iconv</a>, <a
+href="http://perl.org">perl</a> y <a
+href="http://opennlp.apache.org">OpenNLP</a>. El identificador de
+género se basa en las listas de <a
+href="https://es.wikipedia.org/w/index.php?title=Categor%C3%ADa:Nombres_masculinos">nombres
+masculinos no ambiguos en español</a> and <a
+href="https://es.wikipedia.org/w/index.php?title=Categor%C3%ADa:Nombres_femeninos">nombre
+femeninos no ambiguous en español</a> de la Wikipedia en español (y se
+encuentra disponible como un <a
+href="https://github.com/IE4OpenData/generalizador">proyecto
+aparte</a>). La atribución de entidades (desambiguación de menciones
+de personas) es el componente más rudimentario y usa un sistema de
+heurística por puntos para atribuir una frase identificada como una
+persona por OpenNLP a uno de los diputados o diputadas presentes.</p>
+
+<p>              
+El total de texto procesado fue:
+</p>
+              
+<ul>                
+<li> Datos totales (incluyendo tags): 161Mb</li>
+<li> Datos textuales: 107Mb </li>
+<li> Palabras: 2M </li>
+<li> Sesiones: 425 usables, 475 totales </li>
+<li> Años: 2001-2016 </li>
+<li> Total de personas a atribuir: 887 </li>
+</ul>
+
+<p>Estos datos están disponibles para descarga: <a href="http://duboue.net/download/vozyvoto2016ds.zip">http://duboue.net/download/vozyvoto2016ds.zip</a></p>
+
+<h3>
+<a id="team" class="anchor" href="#team" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Equipo</h3>
+
+<ul>
+<li> <a href="http://annieying.ca">Annie Ying</a></li>
+<li> <a href="https://www.facebook.com/mauricio.koraj">Mauricio Koraj</a> </li>
+<li> <a href="http://duboue.net">Pablo Duboue</a></li>
+</ul>
+              
+<h2>
+<a id="keywords-demo" class="anchor" href="#keywords-demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo de palabras claves</h2>
+
+<p>Esta demo fue armada después de la hackathon. Es una live demo
+usando <a href="http://plot.ly">gráficos de plot.ly</a>. Cuidado: es un página de gran tamaño.
+<a href="demo_es.html">Ingresar a la demo.</a></p>
+
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/IE4OpenData" class="avatar"><img src="https://avatars3.githubusercontent.com/u/20518980?v=3&amp;s=60" width="48" height="48"></a> <a href="http://IE4OpenData.org">IE4OpenData</a> maintains <a href="https://github.com/IE4OpenData/vozyvoto">Vozyvoto</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>Esta página utiliza el tema de <a href="https://pages.github.com/">GitHub Pages</a><br> por <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Volver al comienzo</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
