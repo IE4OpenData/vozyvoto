@@ -41,7 +41,7 @@ worth waiting for the next iteration.)
 * State-of-the-Art linking using machine learning over known text
   attributed to the speaker.
 
-* Mearuse the new error counts and also the errors on the linking.
+* Measure the new error counts and also the errors on the linking.
 
 
 ## Live system
