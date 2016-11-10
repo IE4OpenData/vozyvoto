@@ -83,5 +83,14 @@ Requires dates.tsv and txt folder.
 ```
 $ perl ./extract_keywords.pl > keywords.tsv
 ```
+## Bonus: data dumps for plot.ly demo
+
+Requires final-sorted.tsv, dates.tsv, keywords.tsv. 
+
+```
+$ cat ./final-sorted.tsv |perl -e '@a=<STDIN>;chomp@a; @a=map{ [ split(/\t/,$_) ] }@a;for$i(1..4){print "var trace$i={\nx: [\"";print join("\",\"",map { $_->[0] }@a);print "\"],\n";print "y: [";print join(",",map {$_->[$i]}@a);print"],\ntype: \"scatter\"\n};\n"}' > data0.js
+$ cat ./dates.tsv |perl -e 'print "var date2url = { \n";while(<STDIN>){chomp;($u,$d)=split(/\t/,$_);print "\"$d\": \"$u\",\n";};print "};\n"' > data1.js
+$ cat ./keywords.tsv|perl -e 'print "var date2kwd = { \n";while(<STDIN>){chomp;@a=split(/\t/,$_);@k=();@s=();$d=shift@a;shift@a;while(@a){push@k,shift@a;push@s,shift@a;};@d=split(//,$d);print "\"".$d[6].$d[7]."/".$d[4].$d[5]."/".$d[0].$d[1].$d[2].$d[3]."\": {\n";print "keywords: [ \"".join("\",\"",@k)."\"],\nscores: [".join(",",@s)."]\n},\n";}; print "};\n"' > data2.js
+```
 
 
